@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia de Marca FalaBoss</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* Layout: cabeçalho compacto, navegação fixa por seções, uma coluna de leitura com blocos de consulta rápida */
+:root {
+  --bg: #f4f7f6;
+  --surface: #ffffff;
+  --ink: #12211f;
+  --muted: #55625f;
+  --line: #d8e2df;
+  --accent: #00838a;
+  --accent-soft: #e2f3f2;
+  --bright: #00e3c1;
+  --good: #1f7a4d; --good-bg: #e6f4ec;
+  --bad: #b23a3a; --bad-bg: #fbeaea;
+  --warn: #8a5a00; --warn-bg: #fdf2dc;
+  --font-display: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Open Sans", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1716; --surface: #142220; --ink: #e6efed; --muted: #9fb0ac; --line: #26403c;
+    --accent: #2cc5c2; --accent-soft: #163634; --bright: #00e3c1;
+    --good: #6fd19b; --good-bg: #15301f; --bad: #f08c8c; --bad-bg: #3a1c1c; --warn: #f0c26a; --warn-bg: #352a12;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1716; --surface: #142220; --ink: #e6efed; --muted: #9fb0ac; --line: #26403c;
+  --accent: #2cc5c2; --accent-soft: #163634; --bright: #00e3c1;
+  --good: #6fd19b; --good-bg: #15301f; --bad: #f08c8c; --bad-bg: #3a1c1c; --warn: #f0c26a; --warn-bg: #352a12;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--font-body); }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; text-wrap: balance; margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+header.top { background: #0f2b29; color: #eaf6f4; padding: 40px 20px 32px; }
+header.top .wrap { max-width: 1040px; margin: 0 auto; }
+.eyebrow { font: 700 13px/1 var(--font-display); letter-spacing: .08em; text-transform: uppercase; color: var(--bright); }
+header.top h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 800; margin: 10px 0 12px; }
+header.top p { max-width: 64ch; margin: 0; color: #c4dcd8; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chip { font: 600 13px/1 var(--font-display); padding: 7px 11px; border-radius: 999px; background: rgba(0,227,193,.14); color: #bff5ea; }
+
+nav.sec { position: sticky; top: 0; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+nav.sec .wrap { max-width: 1040px; margin: 0 auto; display: flex; gap: 4px; overflow-x: auto; padding: 8px 12px; scrollbar-width: thin; }
+nav.sec a { flex: none; font: 600 14px/1 var(--font-display); color: var(--muted); text-decoration: none; padding: 9px 12px; border-radius: 8px; }
+nav.sec a:hover, nav.sec a.on { background: var(--accent-soft); color: var(--accent); }
+
+main { max-width: 1040px; margin: 0 auto; padding: 8px 20px 80px; }
+section { padding-top: 44px; }
+.sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+.num { font: 800 15px/1 var(--font-display); color: var(--accent); }
+section h2 { font-size: 28px; font-weight: 800; }
+.lead { color: var(--muted); max-width: 68ch; margin: 6px 0 20px; }
+h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+
+.grid { display: grid; gap: 14px; }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; min-width: 0; }
+.card p { margin: 0 0 8px; }
+.card p:last-child { margin-bottom: 0; }
+.big { font: 700 clamp(20px, 3vw, 26px)/1.3 var(--font-display); margin: 0; }
+.statement { border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 0 12px 12px 0; padding: 18px 22px; font-size: 17px; }
+.label { font: 700 12px/1 var(--font-display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: block; }
+
+.attr h3 { color: var(--accent); }
+.ex { border-radius: 8px; padding: 10px 12px; margin-top: 10px; font-size: 15px; }
+.ex b { font: 700 12px/1 var(--font-display); letter-spacing: .05em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+.ex.yes { background: var(--good-bg); } .ex.yes b { color: var(--good); }
+.ex.no { background: var(--bad-bg); } .ex.no b { color: var(--bad); }
+
+.quote { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px 14px; }
+.quote q { display: block; font-size: 16px; quotes: "“" "”"; }
+.quote .who { font-size: 13px; color: var(--muted); margin-top: 6px; display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+button.copy { font: 600 12px/1 var(--font-display); border: 1px solid var(--line); background: var(--surface); color: var(--accent); padding: 7px 10px; border-radius: 6px; cursor: pointer; flex: none; }
+button.copy:hover { background: var(--accent-soft); }
+
+.pillars { counter-reset: p; }
+.pillar { counter-increment: p; }
+.pillar h3::before { content: counter(p) ". "; color: var(--accent); }
+.pillar .use { font-size: 14px; color: var(--muted); }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 700 13px/1.2 var(--font-display); color: var(--muted); background: var(--bg); letter-spacing: .03em; }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 600; min-width: 170px; }
+.lvl { display: inline-block; font: 600 12px/1 var(--font-display); padding: 5px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+
+.search { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.search input { flex: 1 1 260px; font: 16px var(--font-body); padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); }
+.filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.filters button { font: 600 14px/1 var(--font-display); padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.terms { display: grid; gap: 8px; }
+.term { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.term .tag { font: 700 12px/1 var(--font-display); padding: 6px 8px; border-radius: 6px; text-align: center; }
+.tag.use { background: var(--good-bg); color: var(--good); }
+.tag.pref { background: var(--accent-soft); color: var(--accent); }
+.tag.avoid { background: var(--warn-bg); color: var(--warn); }
+.tag.never { background: var(--bad-bg); color: var(--bad); }
+.term strong { font-family: var(--font-display); font-size: 16px; }
+.term p { margin: 2px 0 0; font-size: 14px; color: var(--muted); }
+.term em { font-style: normal; color: var(--ink); }
+.empty { color: var(--muted); padding: 10px 2px; }
+
+details.obj { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 0 18px; }
+details.obj + details.obj { margin-top: 10px; }
+details.obj summary { cursor: pointer; padding: 16px 0; font: 700 17px/1.3 var(--font-display); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+details.obj summary::after { content: "+"; color: var(--accent); font-size: 22px; line-height: 1; }
+details.obj[open] summary::after { content: "–"; }
+details.obj .body { padding-bottom: 16px; }
+details.obj .why { font-size: 14px; color: var(--muted); margin-top: 8px; }
+
+.check { display: grid; gap: 8px; }
+.check label { display: flex; gap: 12px; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; cursor: pointer; }
+.check input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--accent); flex: none; }
+.check label:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.progress { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; font: 600 14px var(--font-display); color: var(--muted); }
+.bar { flex: 1; height: 8px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.bar span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+.reset { font: 600 13px var(--font-display); background: none; border: 0; color: var(--accent); cursor: pointer; text-decoration: underline; }
+
+.open { border-left: 4px solid var(--warn); }
+.status { font: 700 12px/1 var(--font-display); padding: 5px 8px; border-radius: 999px; display: inline-block; margin-bottom: 8px; }
+.status.done { background: var(--good-bg); color: var(--good); }
+.status.pending { background: var(--warn-bg); color: var(--warn); }
+footer { max-width: 1040px; margin: 0 auto; padding: 0 20px 48px; color: var(--muted); font-size: 14px; }
+.dl { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; font: 700 15px/1 var(--font-display); padding: 13px 18px; border-radius: 10px; border: 0; background: var(--bright); color: #0b2422; cursor: pointer; }
+.dl:hover { filter: brightness(1.05); }
+.dl[disabled] { opacity: .6; cursor: progress; }
+.dl small { font: 600 12px/1 var(--font-display); opacity: .75; }
+.dl-note { display: block; margin-top: 8px; font-size: 13px; color: #c4dcd8; }
+.toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 8px; font: 600 14px var(--font-display); opacity: 0; pointer-events: none; transition: opacity .2s; }
+.toast.show { opacity: 1; }
+@media (max-width: 520px) { .term { grid-template-columns: 1fr; gap: 8px; } .term .tag { justify-self: start; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <span class="eyebrow">FalaBoss Brasil · Guia de marca</span>
+    <h1>Como a FalaBoss fala</h1>
+    <p class="big" style="color:#bff5ea;margin-bottom:10px">Vaga deu match? É só chamar no chat.</p>
+    <p>A versão rápida do Framework de Comunicação de Marca. Use antes de escrever um anúncio, um post, uma mensagem de WhatsApp, um e-mail ou um roteiro.</p>
+    <div class="meta"><span class="chip">Público: PMEs e varejo</span><span class="chip">São Paulo</span><span class="chip">Só no app</span><span class="chip">Versão de 25/11/2026 · revisada</span></div>
+    <a class="dl" id="dllink" href="framework-falaboss-pme-varejo-v2.pdf" download="FalaBoss - Framework de Comunicação de Marca.pdf" hidden style="text-decoration:none">Baixar o framework completo (PDF) <small>18 páginas</small></a>
+    <button class="dl" id="dl" type="button" hidden>Baixar o framework completo (PDF) <small>18 páginas</small></button>
+  </div>
+</header>
+
+<nav class="sec" aria-label="Seções do guia">
+  <div class="wrap">
+    <a href="#essencia">Essência</a>
+    <a href="#voz">Voz</a>
+    <a href="#mensagens">Mensagens</a>
+    <a href="#tom">Tom por canal</a>
+    <a href="#palavras">Palavras</a>
+    <a href="#objecoes">Objeções</a>
+    <a href="#falas">Falas de clientes</a>
+    <a href="#checklist">Checklist</a>
+  </div>
+</nav>
+
+<main>
+<section id="essencia">
+  <div class="sec-head"><span class="num">01</span><h2>Essência</h2></div>
+  <p class="lead">Tudo o que a FalaBoss comunica sai daqui.</p>
+  <div class="grid g2">
+    <div class="card"><span class="label">A tese</span><p class="big">A contratação começa numa conversa.</p><p style="margin-top:10px">Quem contrata publica a vaga pelo app, recebe todo dia top matches pensados para ela e chama no chat. A FalaBoss recomenda, e quem decide é sempre quem contrata.</p></div>
+    <div class="card"><span class="label">Para quem falamos</span>
+      <p><strong>Donos e gestores de PME sem RH</strong>: lojas, restaurantes, clínicas, consultórios, agências.</p>
+      <p><strong>Varejo</strong>: dono ou gerente da loja (rua, shopping, franquia, farmácia, supermercado, rede). Mesmo nas redes, o gerente escolhe os candidatos e o RH cuida da documentação e do contrato.</p>
+      <p>Vagas de base contratadas com urgência: atendimento, vendas, caixa, cozinha, estoque, administrativo, estágio.</p></div>
+  </div>
+  <div class="statement" style="margin-top:14px">Para quem contrata sem RH por perto, a FalaBoss é o app de vagas que coloca quem decide na conversa com o candidato em minutos, com top matches diários pensados para cada vaga pelo mesmo sistema do maior app de vagas da China. Publicar a vaga e conversar não tem custo.</div>
+  <div class="grid g3" style="margin-top:14px">
+    <div class="card"><span class="label">Arquétipo</span><h3>O colega de ramo que já passou por isso</h3><p>Já tocou uma operação e contratou com a loja cheia. Fala de igual para igual, longe do tom de consultor e de vendedor.</p></div>
+    <div class="card"><span class="label">Prova de escala</span><h3>BOSS Zhipin, na China</h3><p>Mais de 70 milhões de usuários ativos por mês. Entra como dado, sem ideograma, sem vermelho e dourado, sem exotização. Outras operações do grupo não aparecem.</p></div>
+    <div class="card"><span class="label">Antagonista</span><h3>O processo antigo</h3><p>Formulário, currículo frio, anúncio que não traz ninguém. Nunca as pessoas: nem o RH, nem o candidato, nem um concorrente em peça paga.</p></div>
+  </div>
+</section>
+
+<section id="voz">
+  <div class="sec-head"><span class="num">02</span><h2>Voz em 7 atributos</h2></div>
+  <p class="lead">A voz é sempre a mesma. Use os exemplos como régua em qualquer revisão de copy.</p>
+  <div class="grid g2">
+    <div class="card attr"><h3>De dono para dono</h3><p>De igual para igual com quem contrata para o próprio negócio ou a própria loja. Sem jargão de startup, de tecnologia ou de RH.</p>
+      <div class="ex yes"><b>Encarna</b>“Vaga de caixa aberta e a equipe cobrindo folga? Publique no app e comece hoje a conversa com quem deu match.”</div>
+      <div class="ex no"><b>Viola</b>“Prezado(a) gestor(a), temos o prazer de apresentar nossa plataforma inovadora de talent acquisition.”</div></div>
+    <div class="card attr"><h3>Direto e sem rodeio</h3><p>A primeira linha vale mais que as outras dez. Frases curtas, um CTA só.</p>
+      <div class="ex yes"><b>Encarna</b>“Publique a vaga. Chame no chat. Marque a entrevista.”</div>
+      <div class="ex no"><b>Viola</b>“Venho por meio desta apresentar uma jornada transformadora…”</div></div>
+    <div class="card attr"><h3>Confiante por substância</h3><p>Número, mecânica, fala de cliente e grandes marcas do varejo que já contratam pela FalaBoss (nome de marca só com autorização). Número externo sempre com fonte. Rapidez é da conversa, nunca prazo de contratação.</p>
+      <div class="ex yes"><b>Encarna</b>“O maior app de vagas da China agora no Brasil. Você publica a vaga e todo dia chegam top matches pensados para ela.”</div>
+      <div class="ex no"><b>Viola</b>“Somos a maior revolução do recrutamento no Brasil.”</div></div>
+    <div class="card attr"><h3>Humano e relacional</h3><p>Contratação é início de relação. Perguntamos, escutamos e mostramos gente real. O antagonista é o processo, nunca as pessoas.</p>
+      <div class="ex yes"><b>Encarna</b>“Você abriu vaga de atendente, recebeu currículo de quem nem quer a vaga e ninguém apareceu na entrevista. A gente conhece essa história, e o nosso time te ajuda da publicação da vaga até a primeira conversa.”</div>
+      <div class="ex no"><b>Viola</b>“Nossos especialistas em capital humano estão à disposição…”</div></div>
+    <div class="card attr"><h3>Pragmático e ágil</h3><p>Benefício concreto agora. A mecânica aparece na headline: vaga, top match, chat.</p>
+      <div class="ex yes"><b>Encarna</b>“Publique a vaga pelo app em minutos. Todo dia chegam top matches pensados para ela. Sem custos.”</div>
+      <div class="ex no"><b>Viola</b>“Junte-se à transformação digital do RH…”</div></div>
+    <div class="card attr"><h3>Local com lastro global</h3><p>Português de quem toca negócio: CNPJ, bairro, metrô, loja de shopping. Equilibra formalidade e descontração. A China entra como dado, quando ajudar.</p>
+      <div class="ex yes"><b>Encarna</b>“Do maior app de vagas da China, agora para quem contrata no Brasil.”</div>
+      <div class="ex no"><b>Viola</b>“Trazendo o futuro do recrutamento direto da maior plataforma chinesa de talentos.”</div></div>
+    <div class="card attr"><h3>Verificado e anti-fraude</h3><p>Plataforma séria, gente real dos dois lados. Nada de promessa absoluta nem cheiro de esquema.</p>
+      <div class="ex yes"><b>Encarna</b>“Toda empresa na FalaBoss entra com CNPJ e passa por verificação. Do outro lado do chat tem gente de verdade.”</div>
+      <div class="ex no"><b>Viola</b>“Garantimos a sua contratação em 7 dias ou seu dinheiro de volta.”</div></div>
+    <div class="card"><span class="label">A voz como pessoa</span><h3>Marina, 41 anos</h3><p>Gerenciou lojas de uma rede de varejo na Zona Leste e hoje é sócia de um restaurante e de uma loja de shopping. Já pagou anúncio que não trouxe ninguém, leu currículo no celular entre um cliente e outro e, na correria do dia a dia, fez uma contratação inteira de dentro de um Uber. Fala de tempo, de gente que aparece e da vaga que andou.</p></div>
+  </div>
+</section>
+
+<section id="mensagens">
+  <div class="sec-head"><span class="num">03</span><h2>Mensagens</h2></div>
+  <p class="lead">A proposta de valor, os cinco pilares e a mensagem para cada público. Copie e adapte.</p>
+  <div class="quote"><span class="label">Proposta de valor</span><q>Contratar para a sua loja, restaurante ou negócio começa numa conversa. Publique a vaga pelo app, receba todo dia top matches pensados para ela e chame direto no chat. Sem custos.</q><div class="who"><span>Usar como base de qualquer peça</span><button class="copy" type="button">Copiar</button></div></div>
+
+  <h3 style="margin-top:24px">Cinco pilares</h3>
+  <div class="grid g2 pillars">
+    <div class="card pillar"><h3>Conversa direta com quem decide</h3><p>Os dois lados podem mandar a primeira mensagem: o candidato escreve para a vaga, e quem contrata pode chamar direto um top match.</p><p class="use">“Vaga aberta? Chama no chat quem tem a ver com ela.”</p></div>
+    <div class="card pillar"><h3>Feito para quem contrata no meio da operação</h3><p>Na PME, quem contrata é o dono. Na loja de rede, o gerente escolhe e o RH entra depois. Tudo pelo celular.</p><p class="use">“Você contrata entre um cliente e outro. Quem decide é você.”</p></div>
+    <div class="card pillar"><h3>Top match com causa</h3><p>Todo dia chegam top matches pensados para o que a empresa escreveu na vaga, e a lista acerta mais a cada conversa. Nunca “IA”, nunca “filtro”.</p><p class="use">“A FalaBoss recomenda. Quem decide com quem falar é você.”</p></div>
+    <div class="card pillar"><h3>Gente real dos dois lados</h3><p>Toda empresa entra com CNPJ e passa por verificação. Responde ao medo de golpe e de perfil robô.</p><p class="use">“Empresa verificada e gente de verdade dos dois lados do chat.”</p></div>
+    <div class="card pillar"><h3>A pessoa além do currículo</h3><p>No chat dá para ver interesse, atitude e jeito de se comunicar antes da entrevista.</p></div>
+  </div>
+
+  <h3 style="margin-top:24px">Por público</h3>
+  <div class="grid g2">
+    <div class="quote"><span class="label">Donos e gestores de PME</span><q>Precisa de gente pra ontem? Você abre a FalaBoss no celular, descreve a vaga em poucas linhas e todo dia recebe top matches pensados para ela. A conversa com o candidato começa no chat, sem custos e sem cartão de crédito. A decisão de quem entra na equipe continua sendo sua.</q><div class="who"><span>Objetivo: baixar o app e publicar a 1ª vaga</span><button class="copy" type="button">Copiar</button></div></div>
+    <div class="quote"><span class="label">Gerentes de loja do varejo</span><q>Vaga de vendedor ou de caixa aberta e a loja no movimento? Publique pelo app em minutos e receba todo dia top matches pensados para a vaga. Você chama no chat quem tem a ver com a sua loja, marca a entrevista entre um cliente e outro e escolhe quem entra na equipe. A documentação segue com o RH, como sempre. Sem custos.</q><div class="who"><span>Rascunho, ainda sem fala de cliente</span><button class="copy" type="button">Copiar</button></div></div>
+    <div class="quote"><span class="label">Candidatos</span><q>Na FalaBoss você fala direto com quem contrata: o dono ou o gerente da vaga. Manda uma mensagem no chat, mostra quem você é além do currículo e acompanha a conversa pelo app. Toda empresa entra com CNPJ e passa por verificação.</q><div class="who"><span>Nunca prometer resposta nem emprego</span><button class="copy" type="button">Copiar</button></div></div>
+    <div class="quote"><span class="label">Mercado e imprensa</span><q>A FalaBoss é a operação brasileira do grupo BOSS Zhipin (NASDAQ: BZ), o maior app de vagas da China, com mais de 70 milhões de usuários ativos por mês. Começa por São Paulo, pelas pequenas e médias empresas e pelo varejo, que contratam com urgência para vagas de atendimento, vendas, cozinha e estoque.</q><div class="who"><span>Boilerplate curto</span><button class="copy" type="button">Copiar</button></div></div>
+  </div>
+</section>
+
+<section id="tom">
+  <div class="sec-head"><span class="num">04</span><h2>Tom por canal</h2></div>
+  <p class="lead">A voz é constante. O tom muda em formalidade e energia.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Canal</th><th>Formalidade</th><th>Energia</th><th>Princípio-chave</th></tr></thead>
+    <tbody>
+      <tr><td>Ad de app (Meta, Google, Apple)</td><td><span class="lvl">Média-baixa</span></td><td><span class="lvl">Alta</span></td><td>Gancho em 1 linha com a cena da vaga aberta, mecânica e CTA para baixar o app</td></tr>
+      <tr><td>Ad para candidatos</td><td><span class="lvl">Média</span></td><td><span class="lvl">Média-alta</span></td><td>Concreto, fala direto com quem contrata, sem promessa de resposta ou de emprego</td></tr>
+      <tr><td>Página na App Store e no Google Play</td><td><span class="lvl">Média</span></td><td><span class="lvl">Alta</span></td><td>É a principal landing page hoje. Nome, subtítulo e imagens mostram quem contrata e a rapidez da conversa</td></tr>
+      <tr><td>Abordagem presencial (lojas e shoppings)</td><td><span class="lvl">Baixa</span></td><td><span class="lvl">Alta</span></td><td>Abre com “Está contratando nos próximos 30 dias?” e publica a vaga junto, na hora</td></tr>
+      <tr><td>Outbound por WhatsApp</td><td><span class="lvl">Média-baixa</span></td><td><span class="lvl">Média</span></td><td>Curto, de dono para dono, uma pergunta no final</td></tr>
+      <tr><td>E-mail, push e nurture</td><td><span class="lvl">Média</span></td><td><span class="lvl">Média</span></td><td>Nome da vaga, top match com causa, um único botão</td></tr>
+      <tr><td>Post orgânico (Instagram e LinkedIn)</td><td><span class="lvl">Baixa</span></td><td><span class="lvl">Alta</span></td><td>Cena real de loja ou restaurante, fala de cliente, humor</td></tr>
+      <tr><td>Atendimento 1:1 (CS e Growth Partners)</td><td><span class="lvl">Baixa</span></td><td><span class="lvl">Calorosa</span></td><td>“Te respondo agora”, publica a vaga junto com o cliente</td></tr>
+      <tr><td>Pitch e press release</td><td><span class="lvl">Alta</span></td><td><span class="lvl">Média</span></td><td>Dado, mecânica, ambição, BOSS Zhipin no boilerplate</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="palavras">
+  <div class="sec-head"><span class="num">05</span><h2>Palavras</h2></div>
+  <p class="lead">Busque um termo antes de usar. “A FalaBoss”, sempre no feminino.</p>
+  <div class="search">
+    <label for="q" class="label" style="position:absolute;left:-9999px">Buscar termo</label>
+    <input id="q" type="search" placeholder="Buscar termo, por exemplo: grátis, talento, IA" autocomplete="off">
+    <div class="filters" role="group" aria-label="Filtrar por tipo">
+      <button type="button" data-f="all" aria-pressed="true">Todos</button>
+      <button type="button" data-f="use" aria-pressed="false">Usar</button>
+      <button type="button" data-f="avoid" aria-pressed="false">Evitar</button>
+      <button type="button" data-f="never" aria-pressed="false">Nunca</button>
+    </div>
+  </div>
+  <div class="terms" id="terms"></div>
+  <p class="empty" id="noterm" hidden>Nenhum termo encontrado. Se a dúvida continuar, pergunte no #marketing.</p>
+</section>
+
+<section id="objecoes">
+  <div class="sec-head"><span class="num">06</span><h2>Objeções e respostas</h2></div>
+  <p class="lead">Base para copy, perguntas frequentes e para quem fala com cliente 1:1.</p>
+  <details class="obj" open><summary>“É mais um site de vaga?”</summary><div class="body"><p>“É fácil, rápido e pelo celular: você publica a vaga em minutos e ela não fica parada esperando currículo. Todo dia chegam top matches pensados para ela, e você conversa com eles direto no chat. É o mesmo modelo que o BOSS Zhipin usa com 70 milhões de usuários ativos por mês na China.”</p><p class="why">Por que funciona: muda a categoria, mostra a mecânica e prova com dado.</p></div></details>
+  <details class="obj"><summary>“Sem custos? Qual é a pegadinha?”</summary><div class="body"><p>“Publicar a vaga e conversar com candidatos não tem custo e não pede cartão de crédito. A FalaBoss é a operação brasileira do grupo BOSS Zhipin, listado na bolsa de valores.”</p><p class="why">Por que funciona: responde à desconfiança de golpe com fato verificável e tira o cartão de crédito da conversa.</p></div></details>
+  <details class="obj"><summary>“Vocês são novos no Brasil, por que eu confiaria?”</summary><div class="body"><p>“A operação no Brasil é nova, verdade. O grupo é o do BOSS Zhipin, o maior app de vagas da China, listado na bolsa de valores desde 2021. Toda empresa entra com CNPJ e passa por verificação, e você tem atendimento direto com o nosso time.”</p><p class="why">Por que funciona: reconhece a verdade, ancora em autoridade global e oferece atendimento humano na hora.</p></div></details>
+  <details class="obj"><summary>“Aqui quem contrata é o RH da rede.” (varejo)</summary><div class="body"><p>“Quem escolhe quem entra na loja é você. A FalaBoss cuida dessa parte: você publica a vaga, recebe os top matches e conversa com os candidatos no chat. Depois que você escolhe, a documentação e o contrato seguem com o RH, do jeito que já é hoje.”</p><p class="why">Por que funciona: coloca o gerente como quem decide e mostra que a FalaBoss não mexe no processo do RH.</p></div></details>
+</section>
+
+<section id="falas">
+  <div class="sec-head"><span class="num">07</span><h2>Falas de clientes</h2></div>
+  <p class="lead">Ditas nas entrevistas com donos de PME e candidatos, sem identificar as empresas. Em peça, só como relato, com nome e autorização. Nunca viram promessa.</p>
+  <div class="grid g2">
+    <div class="quote"><q>Eu não tenho RH aqui. Eu sou RH.</q><div class="who"><span>Dono de corretora de seguros · contratar é tarefa extra</span></div></div>
+    <div class="quote"><q>Tinha vagas que tava um ano aberto.</q><div class="who"><span>Gestor de franquia · vaga que trava a operação</span></div></div>
+    <div class="quote"><q>A gente recebia um volume muito grande de candidatos que não tinham interesse na vaga.</q><div class="who"><span>Escritório de contabilidade · currículo de quem nem quer a vaga</span></div></div>
+    <div class="quote"><q>Achei que não ia aparecer nada, fiquei com o pé atrás.</q><div class="who"><span>Indústria de equipamentos · desconfiança antes de testar</span></div></div>
+    <div class="quote"><q>Tive acesso a outras pessoas que não eram o conhecido do filho, do amigo, do parente.</q><div class="who"><span>Dono de e-commerce de moda · além da indicação</span></div></div>
+    <div class="quote"><q>É bem mais fácil ter contato direto com o candidato.</q><div class="who"><span>Recrutadora de clínica · conversa direta</span></div></div>
+    <div class="quote"><q>As empresas e os candidatos são de verdade.</q><div class="who"><span>Indústria de equipamentos · gente real</span></div></div>
+    <div class="quote"><q>Custo zero e um retorno maravilhoso.</q><div class="who"><span>Recrutadora de clínica · sem custos</span></div></div>
+    <div class="quote"><q>Em meia hora eu tava com uma entrevista marcada.</q><div class="who"><span>Candidato, estudante · resposta de quem decide</span></div></div>
+    <div class="quote"><q>Você conversa diretamente com o dono da empresa, não um robô.</q><div class="who"><span>Candidata, marketing · conversa direta</span></div></div>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="sec-head"><span class="num">08</span><h2>Checklist antes de publicar</h2></div>
+  <p class="lead">Marque cada item ao revisar uma peça. As marcações ficam só no seu navegador.</p>
+  <div class="progress"><span id="pc">0 de 11</span><div class="bar"><span id="pb"></span></div><button class="reset" type="button" id="reset">Limpar</button></div>
+  <div class="check" id="check">
+    <label><input type="checkbox"> A primeira linha fala da vaga aberta ou da dor de quem contrata, não da FalaBoss.</label>
+    <label><input type="checkbox"> A mecânica aparece: vaga, top match com causa, chat.</label>
+    <label><input type="checkbox"> Fala com dono de PME, gerente de loja ou candidato. Nada de founder ou startup.</label>
+    <label><input type="checkbox"> Sem promessa de prazo ou de resultado. Rapidez só da conversa (“em minutos”, “conversa na hora”).</label>
+    <label><input type="checkbox"> “Sem custos” e “sem cartão de crédito”, nunca “de graça” ou “grátis”.</label>
+    <label><input type="checkbox"> Sem “IA”, “talento”, “filtro” ou jargão de RH e de startup.</label>
+    <label><input type="checkbox"> Sem a estrutura “não é X, é Y” e sem lista de negação.</label>
+    <label><input type="checkbox"> Nenhum concorrente nomeado em peça paga. O antagonista é o processo.</label>
+    <label><input type="checkbox"> Todo número externo tem fonte. A China entra como dado, sem exotização.</label>
+    <label><input type="checkbox"> No máximo um emoji em post orgânico e nenhum em anúncio pago.</label>
+    <label><input type="checkbox"> Um único CTA: baixar o app (OneLink), nunca falaboss.com.</label>
+  </div>
+</section>
+
+
+</main>
+<footer>O PDF completo está no botão do topo da página. Resumo do Framework de Comunicação de Marca (PME e Varejo), v2. Na dúvida, o framework completo vale. Dúvidas e sugestões: time de Marketing, #marketing.</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const TERMS = [
+  ["use","FalaBoss","Nome da operação e do app, sempre no feminino.","“Abre a FalaBoss e chama no chat.”"],
+  ["use","dono / gerente de loja / quem contrata","O público principal. O gerente escolhe os candidatos mesmo quando o contrato passa pelo RH da rede.","“Feito para quem contrata no meio da operação.”"],
+  ["use","top match","Candidato recomendado para a vaga, sempre com a causa: o que a empresa escreveu.","“Todo dia chegam top matches pensados para a sua vaga.”"],
+  ["use","chat direto","A mecânica central do produto.","“Chat direto com o candidato.”"],
+  ["use","sem custos","No lugar de “de graça”. Some “sem cartão de crédito” quando couber.","“Publique a vaga sem custos.”"],
+  ["use","maior app de vagas da China","Referência de escala, como dado.","“Do maior app de vagas da China.”"],
+  ["use","BOSS Zhipin (NASDAQ: BZ)","Ancoragem institucional.","“A FalaBoss é a operação brasileira do grupo BOSS Zhipin.”"],
+  ["use","Boss Circle","Programa de acesso antecipado para empresas indicadas por parceiros. Fala de pertencimento, nunca de preço.","“Boss Circle: contratação com time do lado.”"],
+  ["use","vaga, conversa, pelo celular","Palavras que deixam claro o que é e como funciona.","“A conversa começa no chat.”"],
+  ["use","a pessoa / o candidato","Humaniza e evita abstração.","“A pessoa que você quer contratar abre o chat com você.”"],
+  ["use","contratar","Verbo de quem decide. Para a ação, nunca como promessa.","“Contrate pelo chat.”"],
+  ["avoid","de graça / grátis","Soa a golpe. Use “sem custos”.",""],
+  ["avoid","talento / talentos","Vetado. Use “candidato” ou “a pessoa”.",""],
+  ["avoid","founder / startup / equity / runway","O público é dono e gerente de loja. Vale também para Boss Circle e parceiros.",""],
+  ["avoid","revolucionário / disruptivo","Hype. Mostre a mecânica.",""],
+  ["avoid","transformação digital / ecossistema de talentos","Abstrato. Nomeie o problema concreto.",""],
+  ["avoid","talent acquisition / ATS / MQL","Jargão interno ou de RH. Descreva a coisa.",""],
+  ["avoid","Prezado(a) / Venho por meio desta","Formal demais. Use “Oi, [Nome]”.",""],
+  ["avoid","estamos animados em anunciar / empoderar","Fórmula gasta. Use “abrimos”, “acabamos de lançar”.",""],
+  ["avoid","plataforma de talentos / solução completa","Abstrai o produto. Use “app de vagas”.",""],
+  ["never","IA / inteligência artificial","Regra de marca. Exceção: a ajuda de IA para escrever a vaga.",""],
+  ["never","contratação na hora / garantida / sem ghosting","Promessa de resultado. Use “conversa na hora” e “em minutos”, sem número.",""],
+  ["never","“não é X, é Y” e listas de negação","Diga o que a FalaBoss faz.",""],
+  ["never","vagas exclusivas sem prova","Soa a esquema.",""],
+  ["never","ganhe dinheiro recrutando","Linguagem de pirâmide.",""],
+  ["never","concorrente nomeado em ad pago","Risco jurídico. Comparação só em vendas 1:1 e orgânico.",""],
+];
+const LBL = {use:"Usar", avoid:"Evitar", never:"Nunca"};
+const box = document.getElementById("terms"), q = document.getElementById("q"), none = document.getElementById("noterm");
+let filt = "all";
+const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+function render() {
+  const t = norm(q.value.trim());
+  const rows = TERMS.filter(([k, w, d, e]) => (filt === "all" || filt === k) && (!t || norm(w + " " + d + " " + e).includes(t)));
+  box.innerHTML = rows.map(([k, w, d, e]) => `<div class="term"><span class="tag ${k}">${LBL[k]}</span><div><strong>${w}</strong><p>${d}${e ? ` <em>${e}</em>` : ""}</p></div></div>`).join("");
+  none.hidden = rows.length > 0;
+}
+q.addEventListener("input", render);
+document.querySelectorAll(".filters button").forEach(b => b.addEventListener("click", () => {
+  filt = b.dataset.f;
+  document.querySelectorAll(".filters button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  render();
+}));
+render();
+
+const toast = document.getElementById("toast");
+function say(m) { toast.textContent = m; toast.classList.add("show"); setTimeout(() => toast.classList.remove("show"), 1600); }
+document.querySelectorAll("button.copy").forEach(b => b.addEventListener("click", async () => {
+  const text = b.closest(".quote").querySelector("q").textContent;
+  try { await navigator.clipboard.writeText(text); say("Texto copiado"); }
+  catch (e) { say("Não deu para copiar. Selecione o texto e copie."); }
+}));
+
+const boxes = [...document.querySelectorAll("#check input")];
+const KEY = "falaboss-checklist";
+function upd() {
+  const n = boxes.filter(b => b.checked).length;
+  document.getElementById("pc").textContent = `${n} de ${boxes.length}`;
+  document.getElementById("pb").style.width = (100 * n / boxes.length) + "%";
+  try { localStorage.setItem(KEY, JSON.stringify(boxes.map(b => b.checked))); } catch (e) {}
+}
+try { const s = JSON.parse(localStorage.getItem(KEY) || "[]"); boxes.forEach((b, i) => b.checked = !!s[i]); } catch (e) {}
+boxes.forEach(b => b.addEventListener("change", upd));
+document.getElementById("reset").addEventListener("click", () => { boxes.forEach(b => b.checked = false); upd(); });
+upd();
+
+const PDF = "framework-falaboss-pme-varejo-v2.pdf";
+const dl = document.getElementById("dl"), dllink = document.getElementById("dllink");
+(async () => {
+  if (!window.claude || !window.claude.use) { document.getElementById("dllink").hidden = false; return; }
+  let downloads = null;
+  try { downloads = window.claude && await window.claude.use("downloads"); } catch (e) {}
+  if (!downloads) { dllink.hidden = false; return; }
+  dl.hidden = false;
+  dl.addEventListener("click", async () => {
+    dl.disabled = true;
+    try {
+      const res = await fetch(PDF);
+      if (!res.ok) throw { code: "fetch" };
+      const blob = await res.blob();
+      await downloads.save({ filename: "FalaBoss - Framework de Comunicação de Marca (PME e Varejo) - v2.pdf", data: blob });
+      say("Download iniciado");
+    } catch (e) {
+      const c = e && e.code;
+      if (c === "declined") say("Download cancelado");
+      else if (c === "rate_limited") say("Já tem um download aberto. Tente de novo em instantes.");
+      else if (c === "host_unavailable") { say("Este app não salva arquivos. Abra a página no navegador."); dl.hidden = true; dllink.hidden = false; }
+      else say("Não deu para baixar agora. Tente de novo.");
+    } finally { dl.disabled = false; }
+  });
+})();
+
+const links = [...document.querySelectorAll("nav.sec a")];
+const secs = links.map(a => document.querySelector(a.getAttribute("href")));
+function spy() {
+  let cur = 0;
+  secs.forEach((s, i) => { if (s.getBoundingClientRect().top < 120) cur = i; });
+  links.forEach((a, i) => a.classList.toggle("on", i === cur));
+}
+addEventListener("scroll", spy, { passive: true }); spy();
+</script>
+</body>
+</html>
