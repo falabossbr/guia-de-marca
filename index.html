@@ -58,6 +58,7 @@ header.top p { max-width: 64ch; margin: 0; color: #c4dcd8; }
 nav.sec { position: sticky; top: 0; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
 nav.sec .wrap { max-width: 1040px; margin: 0 auto; display: flex; gap: 4px; overflow-x: auto; padding: 8px 12px; scrollbar-width: thin; }
 nav.sec a { flex: none; font: 600 14px/1 var(--font-display); color: var(--muted); text-decoration: none; padding: 9px 12px; border-radius: 8px; }
+nav.sec a.ext { color: var(--accent); margin-left: auto; }
 nav.sec a:hover, nav.sec a.on { background: var(--accent-soft); color: var(--accent); }
 
 main { max-width: 1040px; margin: 0 auto; padding: 8px 20px 80px; }
@@ -164,6 +165,7 @@ footer { max-width: 1040px; margin: 0 auto; padding: 0 20px 48px; color: var(--m
     <p class="big" style="color:#bff5ea;margin-bottom:10px">Vaga deu match? É só chamar no chat.</p>
     <p>A versão rápida do Framework de Comunicação de Marca. Use antes de escrever um anúncio, um post, uma mensagem de WhatsApp, um e-mail ou um roteiro.</p>
     <div class="meta"><span class="chip">Público: PMEs e varejo</span><span class="chip">São Paulo</span><span class="chip">Só no app</span><span class="chip">Versão de 25/11/2026 · revisada</span></div>
+    <p style="margin-top:14px"><a href="universo.html" style="color:#bff5ea;font:600 15px var(--font-display)">Conheça o universo de marca: palavras, cores, aroma, som, toque, luz e estilo →</a></p>
     <div class="dls">
       <a class="dl" data-kind="link" href="framework-falaboss-pme-varejo-v2.pdf" download="FalaBoss - Framework de Comunicação de Marca.pdf" hidden>Baixar o framework completo (PDF) <small>18 páginas</small></a>
       <button class="dl" data-kind="btn" data-file="framework-falaboss-pme-varejo-v2.pdf" data-name="FalaBoss - Framework de Comunicação de Marca.pdf" type="button" hidden>Baixar o framework completo (PDF) <small>18 páginas</small></button>
@@ -183,6 +185,7 @@ footer { max-width: 1040px; margin: 0 auto; padding: 0 20px 48px; color: var(--m
     <a href="#objecoes">Objeções</a>
     <a href="#falas">Falas de clientes</a>
     <a href="#checklist">Checklist</a>
+    <a href="universo.html" class="ext">Universo de marca →</a>
   </div>
 </nav>
 
@@ -439,7 +442,7 @@ const showLinks = () => { btns.forEach(b => b.hidden = true); dlLinks.forEach(a 
   });
 })();
 
-const links = [...document.querySelectorAll("nav.sec a")];
+const links = [...document.querySelectorAll("nav.sec a:not(.ext)")];
 const secs = links.map(a => document.querySelector(a.getAttribute("href")));
 function spy() {
   let cur = 0;
