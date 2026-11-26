@@ -224,6 +224,10 @@ td.num-c { font-variant-numeric: tabular-nums; white-space: nowrap; }
 /* fórmula do toque: os três quadros com a mesma altura */
 .formula { align-items: stretch; }
 .formula .plus { align-self: center; }
+
+/* mapa dos atributos: nomes de cor e de artista numa linha só */
+table.map td:first-child { min-width: 0; }
+table.map td:nth-child(2), table.map td:nth-child(4) { white-space: nowrap; }
 </style>
 </head>
 <body>
