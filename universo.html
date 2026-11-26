@@ -196,6 +196,20 @@ ul.plain.off li::marker { color: var(--bad); }
 .kelvin small { display: block; font: 600 12px var(--font-body); margin-top: 4px; }
 td.num-c { font-variant-numeric: tabular-nums; white-space: nowrap; }
 @media (max-width: 640px) { .formula { grid-template-columns: 1fr; } .formula .plus { display: none; } .kelvin { flex-direction: column; } .cloud .w5 { font-size: 34px; } .bar-prop span { font-size: 11px; padding: 0 6px; } }
+
+/* grades com colunas fixas: sem cartão sobrando sozinho na última linha */
+.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.g5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.g2 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 900px) {
+  .g3, .g4, .g5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .g3 > :last-child:nth-child(odd), .g5 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .g2, .g3, .g4, .g5 { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
