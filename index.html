@@ -146,6 +146,17 @@ footer { max-width: 1040px; margin: 0 auto; padding: 0 20px 48px; color: var(--m
 .dl { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; font: 700 15px/1 var(--font-display); padding: 13px 18px; border-radius: 10px; border: 0; background: var(--bright); color: #0b2422; cursor: pointer; }
 .dl:hover { filter: brightness(1.05); }
 .dl[hidden] { display: none; }
+.dd { position: relative; }
+.dl .chev { font-size: 12px; transition: transform .15s; }
+.dl[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.dd-menu { position: absolute; top: calc(100% + 8px); left: 0; z-index: 20; min-width: 280px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 6px; box-shadow: 0 12px 32px rgba(0,0,0,.25); display: grid; gap: 2px; }
+.dd-menu[hidden], .dd-item[hidden] { display: none; }
+.dd-item { display: flex; flex-direction: column; gap: 3px; text-align: left; width: 100%; padding: 11px 14px; border: 0; border-radius: 8px; background: none; color: var(--ink); text-decoration: none; cursor: pointer; font: inherit; }
+.dd-item strong { font: 700 15px var(--font-display); }
+.dd-item small { font-size: 13px; color: var(--muted); }
+.dd-item:hover, .dd-item:focus-visible { background: var(--accent-soft); }
+.dd-item[disabled] { opacity: .6; cursor: progress; }
+
 .dls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 .dls .dl { margin-top: 0; text-decoration: none; }
 .dls { align-items: center; }
@@ -167,10 +178,15 @@ footer { max-width: 1040px; margin: 0 auto; padding: 0 20px 48px; color: var(--m
     <p>A versão rápida do Framework de Comunicação de Marca. Use antes de escrever um anúncio, um post, uma mensagem de WhatsApp, um e-mail ou um roteiro.</p>
     <div class="meta"><span class="chip">Público: PMEs e varejo</span><span class="chip">São Paulo</span><span class="chip">Só no app</span><span class="chip">Versão de 25/11/2026 · revisada</span></div>
     <div class="dls">
-      <a class="dl" data-kind="link" href="framework-falaboss-pme-varejo-v2.pdf" download="FalaBoss - Framework de Comunicação de Marca.pdf" hidden>Baixar o framework (PDF) <small>18 páginas</small></a>
-      <button class="dl" data-kind="btn" data-file="framework-falaboss-pme-varejo-v2.pdf" data-name="FalaBoss - Framework de Comunicação de Marca.pdf" type="button" hidden>Baixar o framework (PDF) <small>18 páginas</small></button>
-      <a class="dl alt" data-kind="link" href="brandbook-falaboss.pdf" download="FalaBoss - Brandbook.pdf" hidden>Baixar o brandbook (PDF) <small>10 MB</small></a>
-      <button class="dl alt" data-kind="btn" data-file="brandbook-falaboss.pdf" data-name="FalaBoss - Brandbook.pdf" type="button" hidden>Baixar o brandbook (PDF) <small>10 MB</small></button>
+      <div class="dd">
+        <button class="dl" id="ddbtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="ddmenu">Downloads <span class="chev" aria-hidden="true">▾</span></button>
+        <div class="dd-menu" id="ddmenu" hidden>
+          <a class="dd-item" data-kind="link" href="framework-falaboss-pme-varejo-v2.pdf" download="FalaBoss - Framework de Comunicação de Marca.pdf" hidden><strong>Framework de comunicação</strong><small>PDF · 18 páginas</small></a>
+          <button class="dd-item" data-kind="btn" data-file="framework-falaboss-pme-varejo-v2.pdf" data-name="FalaBoss - Framework de Comunicação de Marca.pdf" type="button" hidden><strong>Framework de comunicação</strong><small>PDF · 18 páginas</small></button>
+          <a class="dd-item" data-kind="link" href="brandbook-falaboss.pdf" download="FalaBoss - Brandbook.pdf" hidden><strong>Brandbook (identidade visual)</strong><small>PDF · 10 MB</small></a>
+          <button class="dd-item" data-kind="btn" data-file="brandbook-falaboss.pdf" data-name="FalaBoss - Brandbook.pdf" type="button" hidden><strong>Brandbook (identidade visual)</strong><small>PDF · 10 MB</small></button>
+        </div>
+      </div>
       <a class="dl alt" href="universo.html">Universo de marca →</a>
     </div>
   </div>
@@ -415,8 +431,14 @@ boxes.forEach(b => b.addEventListener("change", upd));
 document.getElementById("reset").addEventListener("click", () => { boxes.forEach(b => b.checked = false); upd(); });
 upd();
 
-const dlLinks = [...document.querySelectorAll('.dls [data-kind="link"]')];
-const btns = [...document.querySelectorAll('.dls [data-kind="btn"]')];
+const dlLinks = [...document.querySelectorAll('.dd-menu [data-kind="link"]')];
+const btns = [...document.querySelectorAll('.dd-menu [data-kind="btn"]')];
+const ddbtn = document.getElementById("ddbtn"), ddmenu = document.getElementById("ddmenu");
+function setMenu(open) { ddmenu.hidden = !open; ddbtn.setAttribute("aria-expanded", open); if (open) { const f = ddmenu.querySelector(".dd-item:not([hidden])"); if (f) f.focus(); } }
+ddbtn.addEventListener("click", e => { e.stopPropagation(); setMenu(ddmenu.hidden); });
+document.addEventListener("click", e => { if (!ddmenu.hidden && !ddmenu.contains(e.target)) setMenu(false); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !ddmenu.hidden) { setMenu(false); ddbtn.focus(); } });
+dlLinks.forEach(a => a.addEventListener("click", () => setTimeout(() => setMenu(false), 0)));
 const showLinks = () => { btns.forEach(b => b.hidden = true); dlLinks.forEach(a => a.hidden = false); };
 (async () => {
   if (!window.claude || !window.claude.use) { showLinks(); return; }
@@ -426,7 +448,7 @@ const showLinks = () => { btns.forEach(b => b.hidden = true); dlLinks.forEach(a 
   btns.forEach(dl => {
     dl.hidden = false;
     dl.addEventListener("click", async () => {
-      dl.disabled = true;
+      dl.disabled = true; setMenu(false);
       try {
         const res = await fetch(dl.dataset.file);
         if (!res.ok) throw { code: "fetch" };
