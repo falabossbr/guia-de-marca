@@ -210,6 +210,11 @@ td.num-c { font-variant-numeric: tabular-nums; white-space: nowrap; }
 @media (max-width: 600px) {
   .g2, .g3, .g4, .g5 { grid-template-columns: 1fr; }
 }
+
+/* cartões de citação: o rodapé (fonte e botão Copiar) fica sempre no fim do quadro */
+.quote { display: flex; flex-direction: column; }
+.quote q { flex: 1 1 auto; }
+.quote .who { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
 </style>
 </head>
 <body>
