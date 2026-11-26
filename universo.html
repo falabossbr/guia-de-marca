@@ -215,6 +215,11 @@ td.num-c { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .quote { display: flex; flex-direction: column; }
 .quote q { flex: 1 1 auto; }
 .quote .who { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+
+/* pirâmide olfativa: todas as camadas com a mesma largura */
+.pyramid { justify-items: stretch; }
+.tier, .tier.t1, .tier.t2, .tier.t3 { max-width: none; text-align: left; padding: 18px 22px; }
+.tier p { margin: 6px 0 0; max-width: 75ch; }
 </style>
 </head>
 <body>
