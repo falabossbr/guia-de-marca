@@ -186,6 +186,10 @@ footer { max-width: 1040px; margin: 0 auto; padding: 0 20px 48px; color: var(--m
 .quote { display: flex; flex-direction: column; }
 .quote q { flex: 1 1 auto; }
 .quote .who { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+
+/* tabela de tom: complemento do canal na linha de baixo, menor e mais claro */
+.tone td:first-child{white-space:nowrap} .tone td:first-child small.sub{white-space:nowrap}
+td small.sub { display: block; margin-top: 2px; font: 400 13px/1.4 var(--font-body); color: var(--muted); opacity: .85; }
 </style>
 </head>
 <body>
@@ -298,17 +302,17 @@ footer { max-width: 1040px; margin: 0 auto; padding: 0 20px 48px; color: var(--m
 <section id="tom">
   <div class="sec-head"><span class="num">04</span><h2>Tom por canal</h2></div>
   <p class="lead">A voz é constante. O tom muda em formalidade e energia.</p>
-  <div class="table-wrap"><table>
+  <div class="table-wrap"><table class="tone">
     <thead><tr><th>Canal</th><th>Formalidade</th><th>Energia</th><th>Princípio-chave</th></tr></thead>
     <tbody>
-      <tr><td>Ad de app (Meta, Google, Apple)</td><td><span class="lvl">Média-baixa</span></td><td><span class="lvl">Alta</span></td><td>Gancho em 1 linha com a cena da vaga aberta, mecânica e CTA para baixar o app</td></tr>
+      <tr><td>Ad de app<small class="sub">Meta, Google, Apple</small></td><td><span class="lvl">Média-baixa</span></td><td><span class="lvl">Alta</span></td><td>Gancho em 1 linha com a cena da vaga aberta, mecânica e CTA para baixar o app</td></tr>
       <tr><td>Ad para candidatos</td><td><span class="lvl">Média</span></td><td><span class="lvl">Média-alta</span></td><td>Concreto, fala direto com quem contrata, sem promessa de resposta ou de emprego</td></tr>
-      <tr><td>Página na App Store e no Google Play</td><td><span class="lvl">Média</span></td><td><span class="lvl">Alta</span></td><td>É a principal landing page hoje. Nome, subtítulo e imagens mostram quem contrata e a rapidez da conversa</td></tr>
-      <tr><td>Abordagem presencial (lojas e shoppings)</td><td><span class="lvl">Baixa</span></td><td><span class="lvl">Alta</span></td><td>Abre com “Está contratando nos próximos 30 dias?” e publica a vaga junto, na hora</td></tr>
-      <tr><td>Outbound por WhatsApp</td><td><span class="lvl">Média-baixa</span></td><td><span class="lvl">Média</span></td><td>Curto, de dono para dono, uma pergunta no final</td></tr>
+      <tr><td>Lojas de apps<small class="sub">App Store e Google Play</small></td><td><span class="lvl">Média</span></td><td><span class="lvl">Alta</span></td><td>É a principal landing page hoje. Nome, subtítulo e imagens mostram quem contrata e a rapidez da conversa</td></tr>
+      <tr><td>Abordagem presencial<small class="sub">Lojas e shoppings</small></td><td><span class="lvl">Baixa</span></td><td><span class="lvl">Alta</span></td><td>Abre com “Está contratando nos próximos 30 dias?” e publica a vaga junto, na hora</td></tr>
+      <tr><td>Outbound<small class="sub">WhatsApp · Lead Machine</small></td><td><span class="lvl">Média-baixa</span></td><td><span class="lvl">Média</span></td><td>Curto, de dono para dono, uma pergunta no final</td></tr>
       <tr><td>E-mail, push e nurture</td><td><span class="lvl">Média</span></td><td><span class="lvl">Média</span></td><td>Nome da vaga, top match com causa, um único botão</td></tr>
-      <tr><td>Post orgânico (Instagram e LinkedIn)</td><td><span class="lvl">Baixa</span></td><td><span class="lvl">Alta</span></td><td>Cena real de loja ou restaurante, fala de cliente, humor</td></tr>
-      <tr><td>Atendimento 1:1 (CS e Growth Partners)</td><td><span class="lvl">Baixa</span></td><td><span class="lvl">Calorosa</span></td><td>“Te respondo agora”, publica a vaga junto com o cliente</td></tr>
+      <tr><td>Post orgânico<small class="sub">Instagram e LinkedIn</small></td><td><span class="lvl">Baixa</span></td><td><span class="lvl">Alta</span></td><td>Cena real de loja ou restaurante, fala de cliente, humor</td></tr>
+      <tr><td>Atendimento 1:1<small class="sub">CS e Growth Partners</small></td><td><span class="lvl">Baixa</span></td><td><span class="lvl">Calorosa</span></td><td>“Te respondo agora”, publica a vaga junto com o cliente</td></tr>
       <tr><td>Pitch e press release</td><td><span class="lvl">Alta</span></td><td><span class="lvl">Média</span></td><td>Dado, mecânica, ambição, BOSS Zhipin no boilerplate</td></tr>
     </tbody>
   </table></div>
